@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutionapp/components/appheader.dart';
+import 'package:tutionapp/components/sidebar.dart';
 
 class Bookmark extends StatefulWidget {
   const Bookmark({Key? key}) : super(key: key);
@@ -11,14 +12,17 @@ class Bookmark extends StatefulWidget {
 class _BookmarkState extends State<Bookmark> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: const [
-          AppHeader(
-            title: 'Bookmarks',
-          ),
-        ],
+    return Scaffold(
+      drawer: const NavDrawer(),
+      appBar: AppBar(
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        title: const AppHeader(title: 'Home'),
+        elevation: 0,
+        toolbarHeight: 70,
+        titleSpacing: -10,
       ),
+      body: Container(),
     );
   }
 }

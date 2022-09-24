@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutionapp/components/appheader.dart';
+import 'package:tutionapp/components/sidebar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({ Key? key }) : super(key: key);
@@ -11,13 +12,18 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: const [
-          AppHeader(
-            title: 'Profile',
-          ),
-        ],
+    return Scaffold(
+      drawer: const NavDrawer(),
+      appBar: AppBar(
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        title: const AppHeader(title: 'Home'),
+        elevation: 0,
+        toolbarHeight: 70,
+        titleSpacing: -10,
+      ),
+      body: Center(
+        
       ),
     );
   }

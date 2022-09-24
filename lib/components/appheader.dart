@@ -11,7 +11,7 @@ class AppHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left:20,right: 30),
       child: Column(
         children: [
           //greetings row
