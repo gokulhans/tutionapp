@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tutionapp/screens/bookmark/bookmark.dart';
 import 'package:tutionapp/screens/home/home.dart';
+import 'package:tutionapp/screens/login/login.dart';
 import 'package:tutionapp/screens/profile/profile.dart';
 import 'package:tutionapp/screens/subjects/subjects.dart';
 import 'package:tutionapp/utils/constants.dart';
@@ -11,9 +12,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarIconBrightness: Brightness.light,
     statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
+    // systemNavigationBarColor: Colors.white,
+    // systemNavigationBarIconBrightness: Brightness.dark,
   ));
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -174,6 +176,10 @@ class _HomePageState extends State<HomePage> {
               setState(() {
                 pageIndex = 3;
               });
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const Login()),
+              // );
             },
             icon: pageIndex == 3
                 ? const Icon(
