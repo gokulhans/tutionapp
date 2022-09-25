@@ -1,17 +1,26 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:tutionapp/components/appheader.dart';
-import 'package:tutionapp/components/sidebar.dart';
-import 'package:tutionapp/sample.dart';
+import 'package:flutter/services.dart';
+// import 'package:tutionapp/components/appheader.dart';
+// import 'package:tutionapp/components/sidebar.dart';
+// import 'package:tutionapp/sample.dart';
 import 'package:tutionapp/screens/bookmark/bookmark.dart';
 import 'package:tutionapp/screens/home/home.dart';
-import 'package:tutionapp/screens/home/homehelp.dart';
+// import 'package:tutionapp/screens/home/homehelp.dart';
 import 'package:tutionapp/screens/profile/profile.dart';
 import 'package:tutionapp/screens/subjects/subjects.dart';
-import 'package:tutionapp/screens/video/video.dart';
+// import 'package:tutionapp/screens/video/video.dart';
+// import 'package:tutionapp/screens/videoslist/videoslist.dart';
 import 'package:tutionapp/utils/constants.dart';
 
 void main() {
+   SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+    // systemNavigationBarColor: Colors.white, // navigation bar color
+    systemNavigationBarIconBrightness: Brightness.dark,
+    statusBarColor: Colors.white, // status bar color
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(const MyApp());
 }
 
@@ -33,8 +42,8 @@ class MyApp extends StatelessWidget {
             colorScheme:
                 ColorScheme.fromSwatch().copyWith(secondary: COLOR_DARK_BLUE)),
         debugShowCheckedModeBanner: false,
-        // home: const MyHomePage());
-        home: const Video());
+        home: const MyHomePage());
+        // home: const Video());
   }
 }
 
@@ -71,10 +80,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: COLOR_WHITE,
-      body: pages[pageIndex],
-      bottomNavigationBar: buildMyNavBar(context),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: COLOR_WHITE,
+        body: pages[pageIndex],
+        bottomNavigationBar: buildMyNavBar(context),
+      ),
     );
   }
 

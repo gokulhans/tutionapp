@@ -17,12 +17,12 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
-        title: const AppHeader(title: 'Home'),
+        title: const AppHeader(title: 'Profile'),
         elevation: 0,
         toolbarHeight: 70,
         titleSpacing: -10,
       ),
-      body: Center(
+      body: const Center(
         
       ),
     );
