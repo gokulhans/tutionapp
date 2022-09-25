@@ -14,27 +14,42 @@ class _HomeButtonsState extends State<HomeButtons> {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            vertical: 24.0,
-            horizontal: 36,
+            vertical: 12.0,
+            horizontal: 24,
           ),
           child: GridView.builder(
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 5 / 2,
+                  maxCrossAxisExtent: 300,
+                  childAspectRatio: 5 / 4,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20),
               itemCount: 6,
               itemBuilder: (BuildContext ctx, index) {
                 return Container(
+                  // height: 200,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.white,
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //       color: Colors.grey.shade300,
+                      //       spreadRadius: 1,
+                      //       blurRadius: 4)
+                      // ],
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.white.withOpacity(0.9),
+                          Colors.white.withOpacity(0.6),
+                        ],
+                        begin: AlignmentDirectional.topStart,
+                        end: AlignmentDirectional.bottomEnd,
+                      ),
                       borderRadius: BorderRadius.circular(15)),
                   child: const Text(
-                    '2',
+                    'O',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.green,
                         fontWeight: FontWeight.bold,
                         fontSize: 30),
                   ),

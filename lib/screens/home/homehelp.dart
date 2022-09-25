@@ -10,7 +10,7 @@ class Bannerwidget extends StatefulWidget {
 
 class _BannerwidgetState extends State<Bannerwidget> {
   int _currentIndex = 0;
-  List cardList = [const Item1(), const Item2(), const Item3(), const Item4()];
+  List cardList = [const Item1(), const Item1(), const Item1(), const Item1()];
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -25,7 +25,7 @@ class _BannerwidgetState extends State<Bannerwidget> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-            height: 130.0,
+            height: 150.0,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),
             autoPlayAnimationDuration: const Duration(milliseconds: 800),
@@ -41,7 +41,10 @@ class _BannerwidgetState extends State<Bannerwidget> {
           items: cardList.map((card) {
             return Builder(builder: (BuildContext context) {
               return Container(
-                margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 5,),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 0,
+                  vertical: 5,
+                ),
                 height: MediaQuery.of(context).size.height * 0.30,
                 width: MediaQuery.of(context).size.width,
                 child: Card(
@@ -79,32 +82,32 @@ class Item1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        // boxShadow: [
+        //   BoxShadow(color: Colors.grey.shade300, spreadRadius: 1, blurRadius: 4)
+        // ],
         borderRadius: BorderRadius.circular(4),
-        gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [
-              0.3,
-              1
-            ],
-            colors: [
-              Color(0xffff4000),
-              Color(0xffffcc66),
-            ]),
+        gradient: LinearGradient(
+          colors: [
+            Colors.white.withOpacity(0.9),
+            Colors.white.withOpacity(0.6),
+          ],
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
           Text("Data",
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
+                  color: Colors.green,
+                  fontSize: 30.0,
                   fontWeight: FontWeight.bold)),
-          Text("Data",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w600)),
+          // Text("Data",
+          //     style: TextStyle(
+          //         color: Colors.white,
+          //         fontSize: 17.0,
+          //         fontWeight: FontWeight.w600)),
         ],
       ),
     );
@@ -228,4 +231,3 @@ class Item4 extends StatelessWidget {
     );
   }
 }
-
