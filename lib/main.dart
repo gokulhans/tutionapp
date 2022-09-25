@@ -1,26 +1,32 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:tutionapp/components/appheader.dart';
-// import 'package:tutionapp/components/sidebar.dart';
-// import 'package:tutionapp/sample.dart';
 import 'package:tutionapp/screens/bookmark/bookmark.dart';
 import 'package:tutionapp/screens/home/home.dart';
-// import 'package:tutionapp/screens/home/homehelp.dart';
 import 'package:tutionapp/screens/profile/profile.dart';
 import 'package:tutionapp/screens/subjects/subjects.dart';
-// import 'package:tutionapp/screens/video/video.dart';
-// import 'package:tutionapp/screens/videoslist/videoslist.dart';
 import 'package:tutionapp/utils/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
-   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-    // systemNavigationBarColor: Colors.white, // navigation bar color
-    systemNavigationBarIconBrightness: Brightness.dark,
-    statusBarColor: Colors.white, // status bar color
+void main() async {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    systemNavigationBarIconBrightness: Brightness.light,
+    statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
   ));
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyDAnXQgfGDYcfhP1WIO2udIFUB34KYzVlo",
+      appId: "eduapp-27da8",
+      messagingSenderId: "190219366368",
+      projectId: "eduapp-27da8",
+    ),
+  );
+
   runApp(const MyApp());
 }
 
@@ -43,7 +49,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSwatch().copyWith(secondary: COLOR_DARK_BLUE)),
         debugShowCheckedModeBanner: false,
         home: const MyHomePage());
-        // home: const Video());
+    // home: const Video());
   }
 }
 

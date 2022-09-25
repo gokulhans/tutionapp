@@ -93,7 +93,7 @@ class NavDrawer extends StatelessWidget {
               const message =
                   "Studygram is a place for calicut university students. Previous Year Question Papers ,Studymaterials,Video Classes are Available";
               const appurl =
-                  "https://play.google.com/store/apps/details?id=com.gbroz.studygram";
+                  "https://play.google.com/store/apps/details?id=com.gbrozdev.studygram";
               await Share.share("$message \n $appurl");
             },
           ),

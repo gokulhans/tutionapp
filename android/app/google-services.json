@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "190219366368",
+    "project_id": "eduapp-27da8",
+    "storage_bucket": "eduapp-27da8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190219366368:android:8df935aafb7a9584ba8585",
+        "android_client_info": {
+          "package_name": "com.gbrozdev.tutionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190219366368-2cm853nbr2cknni8gmhr8bk6139g4gfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAnXQgfGDYcfhP1WIO2udIFUB34KYzVlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190219366368-2cm853nbr2cknni8gmhr8bk6139g4gfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
